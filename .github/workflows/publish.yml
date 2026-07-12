@@ -25,7 +25,7 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: Criar o pacote (.nupkg)
-        run: dotnet pack --configuration Release --no-build --output ./nupkg
+        run: dotnet pack HelpWaiter/HelpWaiter.csproj --configuration Release --output ./nupkg
 
       - name: Enviar para o NuGet.org
         run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
