@@ -1,4 +1,5 @@
 ﻿using HelpWaiter.Abstractions;
+using HelpWaiter.Abstractions.Base;
 using HelpWaiter.Abstractions.Command;
 using HelpWaiter.Abstractions.Query;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,7 +15,7 @@ public static class WaiterExtension
 		services.AddTransient<IWaiter, Waiter>();
 
 		var handlerTypes = new[]
-		{
+		{typeof(IRequestHandler<,>),
 			typeof(ICommandHandler<,>),
 			typeof(IQueryHandler<,>)
 		};
