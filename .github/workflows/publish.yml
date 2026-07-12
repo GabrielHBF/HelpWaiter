@@ -1,0 +1,31 @@
+name: Publish to NuGet
+
+on:
+ workflow_dispatch:
+ push:
+   tags:
+      - 'v*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v4
+
+      - name: Instalar o .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.x'
+
+      - name: Compilar em modo Release
+        run: dotnet build --configuration Release
+
+      - name: Criar o pacote (.nupkg)
+        run: dotnet pack --configuration Release --no-build --output ./nupkg
+
+      - name: Enviar para o NuGet.org
+        run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
