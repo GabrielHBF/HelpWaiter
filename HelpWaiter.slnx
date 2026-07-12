@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/HelpWaiter.Abstractions/">
+    <Project Path="HelpWaiter.Abstractions/HelpWaiter.Abstractions/HelpWaiter.Abstractions.csproj" />
+  </Folder>
+  <Folder Name="/HelpWaiter/">
+    <Project Path="HelpWaiter/HelpWaiter/HelpWaiter.csproj" />
+  </Folder>
+</Solution>
