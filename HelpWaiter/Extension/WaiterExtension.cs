@@ -15,7 +15,8 @@ public static class WaiterExtension
 		services.AddTransient<IWaiter, Waiter>();
 
 		var handlerTypes = new[]
-		{typeof(IRequestHandler<,>),
+		{
+			typeof(IRequestHandler<,>),
 			typeof(ICommandHandler<,>),
 			typeof(IQueryHandler<,>)
 		};
