@@ -6,7 +6,7 @@
 		<Nullable>enable</Nullable>
 
 		<PackageId>HelpWaiter</PackageId>
-		<Version>1.0.1</Version>
+		<Version>1.0.2</Version>
 		<Authors>Gabriel Henrique</Authors>
 		<Description>Lightweight and high-performance CQRS Mediator for .NET</Description>
 		<PackageIcon>icon.png</PackageIcon>
